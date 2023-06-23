@@ -158,16 +158,61 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
           children: [
             Padding(
               padding: const EdgeInsets.all(5),
-              child: Container(
-                height: 150,
-                width: Get.width,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                  image: const DecorationImage(
-                    image: AssetImage(
-                        "assets/images/music_bg.jpg"),
-                    fit: BoxFit.cover),
-                ),
+              child: Stack(
+                children: [
+                  Container(
+                    height: 150,
+                    width: Get.width,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                      image: const DecorationImage(
+                        image: AssetImage(
+                            "assets/images/music_bg.jpg"),
+                        fit: BoxFit.cover),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          width: 40,
+                          decoration: BoxDecoration(
+                              color: Colors.white24,
+                            borderRadius: BorderRadius.circular(20)
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 5.0,vertical: 3),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Icon(Icons.star_rounded,
+                                color: Colors.white,
+                                size: 15,),
+                                Text("4.2",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10
+                                ),)
+                              ],
+                            ),
+                          ),
+                        ),
+                        const CircleAvatar(
+                          radius: 12,
+                          backgroundColor: Colors.white24,
+                          child: Icon(
+                            Icons.favorite,
+                            color: Colors.white,
+                            size: 18,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
             Padding(
